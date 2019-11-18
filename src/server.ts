@@ -31,6 +31,12 @@ export default class Server {
 
     app.post('/servey', (req: Request, res: Response) => {
       console.log(req.body);
+      if (req.body !== undefined || req.body !== '') {
+        res.send('Data received with succes');
+      } else {
+        res.status(404);
+      }
+      
     })
     app.listen(this.port, () => {
       console.log('starting server');
