@@ -5,8 +5,7 @@ import bodyparser from "body-parser";
 
 export default class Server {
   readonly port: number;
-
-
+  
   constructor(port: number) {
     this.port = port;
   }
@@ -31,8 +30,7 @@ export default class Server {
     })
 
     app.post('/servey', (req: Request, res: Response) => {
-      console.log(req.body)
-      ;
+      console.log(req.body);
     })
     app.listen(this.port, () => {
       console.log('starting server');
